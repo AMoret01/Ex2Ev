@@ -1,12 +1,13 @@
 import {EXButton} from './EXButton/EXButton';
 import './App.css';
+import Inside from './Inside';
 
-function App() {
-  return (
-    <div className="main-screen">
-      <EXButton title="Listo para hacer clic"></EXButton>
-    </div>
-  );
-}
-
+const App = () => (
+  
+  <div className="main-screen">
+    <Inside TITULO = {'Already in!'}>Welcome to the IT world!</Inside>
+    <EXButton title="Listo para hacer clic"></EXButton>
+  </div>
+);
+console.log("Change for exercise 3, done");
 export default App;
