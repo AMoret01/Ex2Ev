@@ -5,9 +5,10 @@ class Inside extends React.Component {
       return(
             <div>
                 <h1>{this.props.TITULO}</h1>
+
             </div>
         );
-
     }
 }
+console.log("Change for exercise 3, done");
 export default Inside
