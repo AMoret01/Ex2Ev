@@ -1,6 +1,12 @@
 .main-screen {
   min-height: 100vh;
+  min-width: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+h2 {
+  padding-bottom: 300px;
+  margin-left: 660px;
 }

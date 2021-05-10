@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import './Inside.css';
 class Inside extends React.Component {
     render() {
       return(
