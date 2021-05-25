@@ -1,10 +1,18 @@
 import * as React from 'react';
 import './Inside.css';
 class Inside extends React.Component {
+
+    state = {
+        title: this.props.TITULO
+    }
+
+    updateState(titulo) {
+        this.setState({title: titulo})
+    }
     render() {
       return(
             <div>
-                <h1>{this.props.TITULO}</h1>
+                <h1>{this.state.title}</h1>
 
             </div>
         );

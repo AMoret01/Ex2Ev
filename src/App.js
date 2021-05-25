@@ -2,24 +2,26 @@ import {EXButton} from './EXButton/EXButton';
 import {JustDoIt} from './EXButton/EXButton';
 import './App.css';
 import Inside from './Inside';
+import { Component } from 'react';
 
-const message = ["Here button. I called you!"];
+export default class App extends Component {
 
-const callMe = (props) => {
-   if (props === message)   {
-        function finalMessage(){
-        const result = message.map((item,index) => <EXButton key={index} title = {item}></EXButton>)
-        return result;
-      }
-      return finalMessage();
-   }
-};
+  message = "Here button. I called you!";
+  title = 'Already in!'
+  
+  callMe = () => {
+    this._inside.updateState(this.message);
+  };
+  
+  render() {
+   return (
+      <div className="main-screen">
+        <Inside TITULO={this.title}  ref={(ele) => this._inside = ele} >Welcome to the IT world!</Inside>
+        <EXButton method={this.callMe} title={"Listo para hacer clic"}></EXButton>
+      </div>
+    );
+  } 
+}
 
-const App = () => (
-  <div className="main-screen">
-    <Inside TITULO = {'Already in!'}>Welcome to the IT world!</Inside>
-    <EXButton method={callMe(message)} title={"Listo para hacer clic"}></EXButton>
-  </div>
-);
 JustDoIt();
-export default App;
+
