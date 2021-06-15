@@ -1,27 +1,30 @@
-import {EXButton} from './EXButton/EXButton';
-import {JustDoIt} from './EXButton/EXButton';
+import * as React from 'react';
 import './App.css';
-import Inside from './Inside';
-import { Component } from 'react';
+import { EXButton, JustDoIt } from './EXButton/EXButton';
+import ChangeTitle from './Ej3/ChangeTitle';
+import { Link } from 'react-router-dom';
 
-export default class App extends Component {
+class App extends React.Component {
 
-  message = "Here button. I called you!";
-  title = 'Already in!'
-  
+  resultTitle = "Here button. I called you!";
+
   callMe = () => {
-    this._inside.updateState(this.message);
+    this.message.updateTitleState(this.resultTitle);
   };
-  
+
   render() {
-   return (
+    return (
       <div className="main-screen">
-        <Inside TITULO={this.title}  ref={(ele) => this._inside = ele} >Welcome to the IT world!</Inside>
-        <EXButton method={this.callMe} title={"Listo para hacer clic"}></EXButton>
+        <ChangeTitle TITULO={"Alredy in!"} ref={(resultTitle) => this.message = resultTitle}>Welcome to the IT world!</ChangeTitle>
+        <EXButton method={this.callMe} title='Listo para hacer clic' />
+        <div className="navigation">
+          <Link to={"/EXSecondView"} className="h1">
+            Ir al ExSecondView
+          </Link>
+        </div>
       </div>
     );
-  } 
+  }
 }
-
 JustDoIt();
-
+export default App;
